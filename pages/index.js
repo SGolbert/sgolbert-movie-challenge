@@ -1,34 +1,44 @@
 import Head from "next/head";
+import Link from "next/link";
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
 
 export async function getStaticProps() {
   let movies = [];
 
-  for (let index = 1; index <= 1; index++) {
-    const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.TMDB_API_KEY}&language=en-US&page=${index}`;
+  const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
 
-    const res = await fetch(url);
-    const moviePage = await res.json();
+  const res = await fetch(url);
+  const fetchedCategories = await res.json();
 
-    movies = movies.concat(
-      moviePage.results.map((result) => {
-        return {
-          id: result.id.toString(),
-          title: result.title,
-          note: result.vote_average,
-          image: `https://image.tmdb.org/t/p/w500${result.poster_path}`,
-        };
-      })
-    );
-  }
+  const categories = movies.concat(
+    fetchedCategories.genres.map((result) => {
+      return {
+        id: result.id.toString(),
+        name: result.name,
+      };
+    })
+  );
 
   return {
     props: {
-      movies,
+      categories,
     },
   };
 }
 
 export default function Home(props) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  function handlePageClick(data) {
+    let selected = data.selected;
+    let offset = Math.ceil(selected * 4);
+
+    setCurrentPage(selected);
+
+    console.log(currentPage);
+  }
+
   return (
     <div className="container">
       <Head>
@@ -38,20 +48,35 @@ export default function Home(props) {
 
       <main>
         <h1 className="title">Best rated movies at The Movie Database</h1>
-        <button>Test</button>
         <ul>
-          {props.movies.map((movie) => (
-            <li>
-              <p>{movie.title}</p>
-              <p>{movie.note}</p>
-              <p>{movie.image}</p>
-              <img src={movie.image} />
-            </li>
-          ))}
+          {props.categories.map((category, index) =>
+            index >= currentPage * 4 && index <= (currentPage + 1) * 4 ? (
+              <li>
+                <Link href={`/categories/${category.id}`}>
+                  <a>{category.name}</a>
+                </Link>
+              </li>
+            ) : (
+              ""
+            )
+          )}
         </ul>
-        {/* {props.movies.map((movie) => (
-          <img src="{movie.image}" />
-        ))} */}
+
+        <div className="commentBox">
+          <ReactPaginate
+            previousLabel={"previous"}
+            nextLabel={"next"}
+            breakLabel={"..."}
+            breakClassName={"break-me"}
+            pageCount={Math.ceil(props.categories.length / 4)}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={2}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            subContainerClassName={"pages pagination"}
+            activeClassName={"active"}
+          />
+        </div>
       </main>
     </div>
   );
