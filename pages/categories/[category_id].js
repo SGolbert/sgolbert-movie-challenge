@@ -7,8 +7,6 @@ export async function getStaticProps({ params }) {
   for (let index = 1; index <= 2; index++) {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${index}&with_genres=${params.category_id}`;
 
-    console.log(params.category_id);
-
     const res = await fetch(url);
     const fetchedMovies = await res.json();
 
@@ -62,7 +60,10 @@ export default function Post({ movies, category }) {
       <ul>
         {movies.map((movie) => (
           <li>
-            <Link href={`/movies/${movie.id}`}>
+            <Link
+              href={`/movies/?movie_id=${movie.id}`}
+              as={`/movies/${movie.id}`}
+            >
               <a>{movie.title}</a>
             </Link>
           </li>

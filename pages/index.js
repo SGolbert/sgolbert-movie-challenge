@@ -36,7 +36,7 @@ export default function Home(props) {
 
     setCurrentPage(selected);
 
-    console.log(currentPage);
+    // console.log(currentPage);
   }
 
   return (
@@ -50,9 +50,12 @@ export default function Home(props) {
         <h1 className="title">Best rated movies at The Movie Database</h1>
         <ul>
           {props.categories.map((category, index) =>
-            index >= currentPage * 4 && index <= (currentPage + 1) * 4 ? (
+            index >= currentPage * 4 && index < (currentPage + 1) * 4 ? (
               <li>
-                <Link href={`/categories/${category.id}`}>
+                <Link
+                  href={`/categories/?category_id=${category.id}`}
+                  as={`/categories/${category.id}`}
+                >
                   <a>{category.name}</a>
                 </Link>
               </li>
