@@ -60,7 +60,11 @@ export default function Post({ movies, category }) {
       <ul>
         {movies.map((movie) => (
           <li>
-            <Link href={`/movies/[movie.id]`} as={`/movies/${movie.id}`}>
+            <Link
+              href={`/movies/[movie.id]`}
+              as={`/movies/${movie.id}`}
+              prefetch={false}
+            >
               <a>{movie.title}</a>
             </Link>
           </li>
