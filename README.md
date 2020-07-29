@@ -22,7 +22,7 @@ Once the user clicks on a genre, he will be taken to the next page: list of movi
 
 ## [Movies under a genre page](https://github.com/SGolbert/sgolbert-movie-challenge/blob/master/pages/categories/%5Bcategory_id%5D.js)
 
-This page is also _statically_ generated fetching the first two pages of the list of movies for that genre, order by popularity. It is just as easy to statically generate either pagination or actual pages for all the movies of the genre, but that has been left out to avoid taxing the API unnecessarilly.
+This page is also _statically_ generated fetching the first ten pages of the list of movies for that genre, ordered by decreasing popularity. It is just as easy to statically generate pages for all the movies of the genre, but that has been left out to avoid taxing the API unnecessarilly.
 
 When a particular movie is clicked, the user will be taken to the movie's details.
 

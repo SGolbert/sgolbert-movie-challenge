@@ -77,7 +77,7 @@ export default function Post({ movies, category }) {
                 <Link
                   href={`/movies/[movie.id]`}
                   as={`/movies/${movie.id}`}
-                  prefetch={false}
+                  // prefetch={false}
                 >
                   <a>{movie.title}</a>
                 </Link>
