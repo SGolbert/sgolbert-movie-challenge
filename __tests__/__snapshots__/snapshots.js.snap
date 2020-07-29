@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders category page unchanged 1`] = `
+<div>
+  <main>
+    <h1>
+      Category 
+    </h1>
+    <ul>
+      <li>
+        <a
+          href="/movies/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Back to the future
+        </a>
+      </li>
+      <li>
+        <a
+          href="/movies/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Star Wars
+        </a>
+      </li>
+    </ul>
+    <div
+      className="pagination"
+    >
+      <ul
+        className="pagination"
+      >
+        <li
+          className="previous disabled"
+        >
+          <a
+            aria-disabled="true"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            previous
+          </a>
+        </li>
+        <li
+          className="active"
+        >
+          <a
+            aria-current="page"
+            aria-label="Page 1 is your current page"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            1
+          </a>
+        </li>
+        <li
+          className="next disabled"
+        >
+          <a
+            aria-disabled="true"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            next
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`renders homepage unchanged 1`] = `
+<div
+  className="container"
+>
+  <main>
+    <h1
+      className="title"
+    >
+      Best rated movies at The Movie Database
+    </h1>
+    <ul>
+      <li>
+        <a
+          href="/categories/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Action
+        </a>
+      </li>
+      <li>
+        <a
+          href="/categories/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Crime
+        </a>
+      </li>
+    </ul>
+    <div
+      className="pagination"
+    >
+      <ul
+        className="pagination"
+      >
+        <li
+          className="previous disabled"
+        >
+          <a
+            aria-disabled="true"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            previous
+          </a>
+        </li>
+        <li
+          className="active"
+        >
+          <a
+            aria-current="page"
+            aria-label="Page 1 is your current page"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            1
+          </a>
+        </li>
+        <li
+          className="next disabled"
+        >
+          <a
+            aria-disabled="true"
+            onClick={[Function]}
+            onKeyPress={[Function]}
+            role="button"
+            tabIndex="0"
+          >
+            next
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+</div>
+`;
+
+exports[`renders movie page unchanged 1`] = `
+<div>
+  <main>
+    <h1>
+      Back to the future
+    </h1>
+    <img
+      src="https://image.tmdb.org/t/p/w500/1234"
+    />
+    <p>
+      Language: 
+      en
+    </p>
+    <p>
+      Release date: 
+      1980-01-01
+    </p>
+    <p>
+      Overview: 
+      Great movie!
+    </p>
+    <p>
+      Number of votes: 
+      10000
+    </p>
+    <p>
+      Average rating: 
+      10
+    </p>
+  </main>
+</div>
+`;
