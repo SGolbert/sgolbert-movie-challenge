@@ -75,7 +75,7 @@ export default function Post({ movies, category }) {
             index >= currentPage * 9 && index < (currentPage + 1) * 9 ? (
               <li>
                 <Link
-                  href={`/movies/[movie.id]`}
+                  href={`/movies/[movie_id]`}
                   as={`/movies/${movie.id}`}
                   // prefetch={false}
                 >
