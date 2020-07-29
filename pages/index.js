@@ -53,7 +53,7 @@ export default function Home(props) {
             index >= currentPage * 4 && index < (currentPage + 1) * 4 ? (
               <li>
                 <Link
-                  href={`/categories/?category_id=${category.id}`}
+                  href={`/categories/[category_id]`}
                   as={`/categories/${category.id}`}
                 >
                   <a>{category.name}</a>
