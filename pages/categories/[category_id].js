@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
+import ReactPaginate from "react-paginate";
 
 export async function getStaticProps({ params }) {
   let movies = [];
@@ -51,25 +53,57 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ movies, category }) {
+  const [currentPage, setCurrentPage] = useState(0);
+
+  function handlePageClick(data) {
+    let selected = data.selected;
+
+    setCurrentPage(selected);
+
+    // console.log(currentPage);
+  }
+
   return (
     <div>
       <Head>
         <title>Category:</title>
       </Head>
-      <h1>Category {category}</h1>
-      <ul>
-        {movies.map((movie) => (
-          <li>
-            <Link
-              href={`/movies/[movie.id]`}
-              as={`/movies/${movie.id}`}
-              prefetch={false}
-            >
-              <a>{movie.title}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <main>
+        <h1>Category {category}</h1>
+        <ul>
+          {movies.map((movie, index) =>
+            index >= currentPage * 9 && index < (currentPage + 1) * 9 ? (
+              <li>
+                <Link
+                  href={`/movies/[movie.id]`}
+                  as={`/movies/${movie.id}`}
+                  prefetch={false}
+                >
+                  <a>{movie.title}</a>
+                </Link>
+              </li>
+            ) : (
+              ""
+            )
+          )}
+        </ul>
+
+        <div className="pagination">
+          <ReactPaginate
+            previousLabel={"previous"}
+            nextLabel={"next"}
+            breakLabel={"..."}
+            breakClassName={"break-me"}
+            pageCount={Math.ceil(movies.length / 9)}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={2}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            subContainerClassName={"pages pagination"}
+            activeClassName={"active"}
+          />
+        </div>
+      </main>
     </div>
   );
 }

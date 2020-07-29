@@ -28,16 +28,16 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
 
   function handlePageClick(data) {
     let selected = data.selected;
-    let offset = Math.ceil(selected * 4);
+    console.log(currentPage + 1);
 
     setCurrentPage(selected);
-
-    // console.log(currentPage);
   }
+
+  console.log(currentPage + 1);
 
   return (
     <div className="container">
@@ -65,7 +65,7 @@ export default function Home(props) {
           )}
         </ul>
 
-        <div className="commentBox">
+        <div className="pagination">
           <ReactPaginate
             previousLabel={"previous"}
             nextLabel={"next"}
