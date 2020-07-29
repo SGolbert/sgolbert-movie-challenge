@@ -27,7 +27,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       movies,
-      category: params.category_id,
+      category: params.genre,
     },
   };
 }
@@ -42,6 +42,7 @@ export async function getStaticPaths() {
     return {
       params: {
         category_id: result.id.toString(),
+        genre: result.name,
       },
     };
   });
@@ -59,8 +60,6 @@ export default function Post({ movies, category }) {
     let selected = data.selected;
 
     setCurrentPage(selected);
-
-    // console.log(currentPage);
   }
 
   return (
@@ -69,16 +68,12 @@ export default function Post({ movies, category }) {
         <title>Category:</title>
       </Head>
       <main>
-        <h1>Category {category}</h1>
+        <h1>{category} movies</h1>
         <ul>
           {movies.map((movie, index) =>
             index >= currentPage * 9 && index < (currentPage + 1) * 9 ? (
               <li>
-                <Link
-                  href={`/movies/[movie_id]`}
-                  as={`/movies/${movie.id}`}
-                  // prefetch={false}
-                >
+                <Link href={`/movies/[movie_id]`} as={`/movies/${movie.id}`}>
                   <a>{movie.title}</a>
                 </Link>
               </li>

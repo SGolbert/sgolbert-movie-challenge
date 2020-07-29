@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import Home from "../pages/index";
-import CategoryListPage from "../pages/categories/[category_id]";
+import CategoryListPage from "../pages/categories/[category_id]/[genre]";
 import MoviePage from "../pages/movies/[movie_id]";
 
 it("renders homepage unchanged", () => {

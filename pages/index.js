@@ -32,12 +32,9 @@ export default function Home(props) {
 
   function handlePageClick(data) {
     let selected = data.selected;
-    console.log(currentPage + 1);
 
     setCurrentPage(selected);
   }
-
-  console.log(currentPage + 1);
 
   return (
     <div className="container">
@@ -47,14 +44,16 @@ export default function Home(props) {
       </Head>
 
       <main>
-        <h1 className="title">Best rated movies at The Movie Database</h1>
+        <h1 className="title">
+          These are the most popular movies at The Movie Database
+        </h1>
         <ul>
           {props.categories.map((category, index) =>
             index >= currentPage * 4 && index < (currentPage + 1) * 4 ? (
               <li>
                 <Link
-                  href={`/categories/[category_id]`}
-                  as={`/categories/${category.id}`}
+                  href={`/categories/[category_id]/[genre]`}
+                  as={`/categories/${category.id}/${category.name}`}
                 >
                   <a>{category.name}</a>
                 </Link>
