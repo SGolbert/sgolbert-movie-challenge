@@ -6,8 +6,8 @@ import MoviePage from "../pages/movies/[movie_id]";
 
 it("renders homepage unchanged", () => {
   const categories = [
-    { name: "Action", id: 1 },
-    { name: "Crime", id: 2 },
+    { name: "Action", id: "1" },
+    { name: "Crime", id: "2" },
   ];
 
   const tree = renderer.create(<Home categories={categories} />).toJSON();
@@ -16,8 +16,8 @@ it("renders homepage unchanged", () => {
 
 it("renders category page unchanged", () => {
   const movieList = [
-    { title: "Back to the future", id: 1 },
-    { title: "Star Wars", id: 2 },
+    { title: "Back to the future", id: "1" },
+    { title: "Star Wars", id: "2" },
   ];
 
   const tree = renderer

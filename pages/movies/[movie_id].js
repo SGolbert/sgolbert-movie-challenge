@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../../components/Layout";
 import GoBack from "../../components/GoBack";
 
 export async function getServerSideProps({ params }) {
+  // eslint-disable-next-line no-undef
   const url = `https://api.themoviedb.org/3/movie/${params.movie_id}?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
 
   const res = await fetch(url);
@@ -16,7 +17,7 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export default function Post({ movie }) {
+export default function Movie({ movie }) {
   return (
     <Layout>
       <Head>
@@ -74,3 +75,15 @@ export default function Post({ movie }) {
     </Layout>
   );
 }
+
+Movie.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    original_language: PropTypes.string,
+    release_date: PropTypes.string,
+    overview: PropTypes.string,
+    vote_count: PropTypes.number,
+    vote_average: PropTypes.number,
+  }),
+};

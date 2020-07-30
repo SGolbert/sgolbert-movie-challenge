@@ -70,13 +70,11 @@ export default function MoviesByGenre({ movies, category }) {
   useEffect(() => {
     const currPage =
       localStorage.getItem(`movie_challenge_${category}_curr_page`) || 0;
-    console.log("currPage", currPage);
     setCurrentPage(Number(currPage));
   }, []);
 
   function handlePageClick(data) {
     let selected = data.selected;
-    console.log(selected);
     localStorage.setItem(`movie_challenge_${category}_curr_page`, selected);
     setCurrentPage(selected);
   }
@@ -165,6 +163,7 @@ MoviesByGenre.propTypes = {
     PropTypes.shape({
       id: PropTypes.string,
       title: PropTypes.string,
+      image: PropTypes.string,
     })
   ),
   category: PropTypes.string,
