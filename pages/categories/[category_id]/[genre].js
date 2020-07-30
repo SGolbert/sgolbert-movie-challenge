@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -7,6 +8,7 @@ export async function getStaticProps({ params }) {
   let movies = [];
 
   for (let index = 1; index <= 2; index++) {
+    // eslint-disable-next-line no-undef
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${index}&with_genres=${params.category_id}`;
 
     const res = await fetch(url);
@@ -33,6 +35,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+  // eslint-disable-next-line no-undef
   const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en-US`;
 
   const res = await fetch(url);
@@ -53,7 +56,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default function Post({ movies, category }) {
+export default function MoviesByGenre({ movies, category }) {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -125,3 +128,13 @@ export default function Post({ movies, category }) {
     </div>
   );
 }
+
+MoviesByGenre.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+    })
+  ),
+  category: PropTypes.string,
+};
