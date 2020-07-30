@@ -3,11 +3,13 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
+import Layout from "../../../components/Layout";
+import GoBack from "../../../components/GoBack";
 
 export async function getStaticProps({ params }) {
   let movies = [];
 
-  for (let index = 1; index <= 2; index++) {
+  for (let index = 1; index <= 10; index++) {
     // eslint-disable-next-line no-undef
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${index}&with_genres=${params.category_id}`;
 
@@ -84,25 +86,30 @@ export default function MoviesByGenre({ movies, category }) {
   }
 
   return (
-    <div>
+    <Layout>
       <Head>
-        <title>Category:</title>
+        <title>{category} movies</title>
       </Head>
       <main>
         <h1>{category} movies</h1>
-        <ul>
+        <div className="movieContainer">
           {movies.map((movie, index) =>
-            index >= currentPage * 9 && index < (currentPage + 1) * 9 ? (
-              <li>
-                <Link href={`/movies/[movie_id]`} as={`/movies/${movie.id}`}>
-                  <a>{movie.title}</a>
-                </Link>
-              </li>
+            index >= currentPage * 8 && index < (currentPage + 1) * 8 ? (
+              <Link href={`/movies/[movie_id]`} as={`/movies/${movie.id}`}>
+                <a className="movieItem">
+                  <img
+                    height="513px"
+                    width="342px"
+                    src={`https://image.tmdb.org/t/p/w342${movie.image}`}
+                  />
+                  <p className="movieTitle">{movie.title}</p>
+                </a>
+              </Link>
             ) : (
               ""
             )
           )}
-        </ul>
+        </div>
 
         <div className="pagination">
           <ReactPaginate
@@ -121,18 +128,42 @@ export default function MoviesByGenre({ movies, category }) {
           />
         </div>
 
-        <Link href="/">
-          <a>Go back</a>
-        </Link>
+        <GoBack />
       </main>
-    </div>
+      <style jsx>{`
+        .movieContainer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .movieItem {
+          align-items: center;
+          flex: 0 1 calc(50% - 20px);
+          line-height: 1.65;
+          justify-content: center;
+          margin: 0 20px 20px 0;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .movieItem:hover {
+          box-shadow: 4px 4px 1px blue;
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+
+        .movieTitle:hover {
+        }
+      `}</style>
+    </Layout>
   );
 }
 
 MoviesByGenre.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       title: PropTypes.string,
     })
   ),

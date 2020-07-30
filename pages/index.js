@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
+import Layout from "../components/Layout";
 
 export async function getStaticProps() {
   let movies = [];
@@ -29,7 +30,7 @@ export async function getStaticProps() {
   };
 }
 
-const Home = function ({ categories }) {
+function Home({ categories }) {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ const Home = function ({ categories }) {
   }
 
   return (
-    <div className="container">
+    <Layout>
       <Head>
         <title>Movie Database Challenge</title>
         <link rel="icon" href="/favicon.ico" />
@@ -67,24 +68,23 @@ const Home = function ({ categories }) {
         <h1 className="title">
           These are the most popular movies at The Movie Database
         </h1>
-        <ul>
+
+        <div className="categoryContainer">
           {categories.map((category, index) =>
             index >= currentPage * 4 && index < (currentPage + 1) * 4 ? (
-              <li>
-                <Link
-                  href={`/categories/[category_id]/[genre]`}
-                  as={`/categories/${category.id}/${category.name}`}
-                >
-                  <a>{category.name}</a>
-                </Link>
-              </li>
+              <Link
+                href={`/categories/[category_id]/[genre]`}
+                as={`/categories/${category.id}/${category.name}`}
+              >
+                <a className="categoryItem">{category.name}</a>
+              </Link>
             ) : (
               ""
             )
           )}
-        </ul>
+        </div>
 
-        <div className="pagination">
+        <div className="paginate">
           <ReactPaginate
             activeClassName={"active"}
             breakLabel={"..."}
@@ -100,16 +100,50 @@ const Home = function ({ categories }) {
             subContainerClassName={"pages pagination"}
           />
         </div>
+
+        <style jsx>{`
+          .categoryContainer {
+            display: flex;
+            flex-wrap: wrap;
+          }
+
+          .categoryItem {
+            align-items: center;
+            background: black;
+            color: white;
+            display: flex;
+            flex: 0 1 calc(50% - 20px);
+            font-size: 50px;
+            height: 500px;
+            line-height: 1.65;
+            justify-content: center;
+            margin: 0 20px 20px 0;
+            text-align: center;
+            text-decoration: none;
+          }
+
+          .categoryItem:hover {
+            background: blue;
+          }
+
+          @media screen and (max-width: 650px) {
+            .categoryItem {
+              flex: 1 0 100%;
+            }
+          }
+        `}</style>
       </main>
-    </div>
+    </Layout>
   );
-};
+}
 
 Home.propTypes = {
-  categories: PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-  }),
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
 };
 
 export default Home;

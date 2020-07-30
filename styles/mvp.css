@@ -91,11 +91,11 @@ section aside img {
 }
 
 /* Headers */
-article header,
+/* article header,
 div header,
 main header {
     padding-top: 0;
-}
+} */
 
 header {
     text-align: var(--justify-important);
