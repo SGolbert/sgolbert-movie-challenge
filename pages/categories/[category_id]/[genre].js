@@ -98,6 +98,10 @@ export default function Post({ movies, category }) {
             activeClassName={"active"}
           />
         </div>
+
+        <Link href="/">
+          <a>Go back</a>
+        </Link>
       </main>
     </div>
   );

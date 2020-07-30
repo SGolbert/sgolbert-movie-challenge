@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
 export async function getStaticProps() {
@@ -28,12 +28,33 @@ export async function getStaticProps() {
 }
 
 export default function Home(props) {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const [currentPage, setCurrentPage] = useState(-1);
+
+  useEffect(() => {
+    const currPage =
+      localStorage.getItem("movie_challenge_landing_curr_page") || 0;
+    setCurrentPage(Number(currPage));
+  }, []);
 
   function handlePageClick(data) {
+    console.log(data);
     let selected = data.selected;
 
+    localStorage.setItem("movie_challenge_landing_curr_page", selected);
     setCurrentPage(selected);
+  }
+
+  console.log(currentPage);
+
+  // trick to restore state out of local storage for SSG pages
+  if (!hasMounted) {
+    return null;
   }
 
   return (
@@ -66,17 +87,18 @@ export default function Home(props) {
 
         <div className="pagination">
           <ReactPaginate
-            previousLabel={"previous"}
-            nextLabel={"next"}
+            activeClassName={"active"}
             breakLabel={"..."}
             breakClassName={"break-me"}
-            pageCount={Math.ceil(props.categories.length / 4)}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={2}
-            onPageChange={handlePageClick}
             containerClassName={"pagination"}
+            initialPage={Number(currentPage)}
+            marginPagesDisplayed={2}
+            nextLabel={"next"}
+            onPageChange={handlePageClick}
+            pageCount={Math.ceil(props.categories.length / 4)}
+            previousLabel={"previous"}
+            pageRangeDisplayed={2}
             subContainerClassName={"pages pagination"}
-            activeClassName={"active"}
           />
         </div>
       </main>
