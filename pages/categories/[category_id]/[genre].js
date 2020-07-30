@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
 export async function getStaticProps({ params }) {
@@ -54,12 +54,30 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ movies, category }) {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    const currPage =
+      localStorage.getItem(`movie_challenge_${category}_curr_page`) || 0;
+    console.log("currPage", currPage);
+    setCurrentPage(Number(currPage));
+  }, []);
 
   function handlePageClick(data) {
     let selected = data.selected;
-
+    console.log(selected);
+    localStorage.setItem(`movie_challenge_${category}_curr_page`, selected);
     setCurrentPage(selected);
+  }
+
+  if (!hasMounted) {
+    return null;
   }
 
   return (
@@ -85,17 +103,18 @@ export default function Post({ movies, category }) {
 
         <div className="pagination">
           <ReactPaginate
-            previousLabel={"previous"}
-            nextLabel={"next"}
-            breakLabel={"..."}
-            breakClassName={"break-me"}
-            pageCount={Math.ceil(movies.length / 9)}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={2}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            subContainerClassName={"pages pagination"}
             activeClassName={"active"}
+            breakClassName={"break-me"}
+            breakLabel={"..."}
+            containerClassName={"pagination"}
+            initialPage={Number(currentPage)}
+            marginPagesDisplayed={2}
+            nextLabel={"next"}
+            onPageChange={handlePageClick}
+            previousLabel={"previous"}
+            pageCount={Math.ceil(movies.length / 9)}
+            pageRangeDisplayed={2}
+            subContainerClassName={"pages pagination"}
           />
         </div>
 

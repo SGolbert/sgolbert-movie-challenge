@@ -37,3 +37,4 @@ Testing is included in the repository by using Jest and react-test-renderer. At 
 # State management
 
 The current displayed page in the sliders of the category and movie by category pages is saved in local storage and managed by the useState React hook. The use of Redux for such a simple use case is not recommended.
+An example with Redux can be found [here](https://github.com/SGolbert/expensify-app).

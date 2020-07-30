@@ -34,7 +34,7 @@ export default function Home(props) {
     setHasMounted(true);
   }, []);
 
-  const [currentPage, setCurrentPage] = useState(-1);
+  const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
     const currPage =
@@ -43,14 +43,11 @@ export default function Home(props) {
   }, []);
 
   function handlePageClick(data) {
-    console.log(data);
     let selected = data.selected;
 
     localStorage.setItem("movie_challenge_landing_curr_page", selected);
     setCurrentPage(selected);
   }
-
-  console.log(currentPage);
 
   // trick to restore state out of local storage for SSG pages
   if (!hasMounted) {
