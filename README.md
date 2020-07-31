@@ -48,6 +48,6 @@ Another example with Redux can be found [here](https://github.com/SGolbert/expen
 
 # Styling
 
-The styling has been made with a combination of styled-jsx (the default css-in-js styling solution in Next.js) and a global css file [mvp.css](https://github.com/SGolbert/sgolbert-movie-challenge/blob/master/styles/mvp.css). MVP stands for "Minimum Viable Product" and the stylesheet has been created by [Andy Brewer](https://andybrewer.github.io/mvp/).
+The styling has been made with a combination of styled-jsx (the default css-in-js styling solution of Next.js) and a global css file [mvp.css](https://github.com/SGolbert/sgolbert-movie-challenge/blob/master/styles/mvp.css). MVP stands for "Minimum Viable Product" and the stylesheet has been created by [Andy Brewer](https://andybrewer.github.io/mvp/).
 
 The idea behind this approach is to have acceptable css defaults which make prototyping fast. The current state of the website can be considered a MVP, not a final product in any way.

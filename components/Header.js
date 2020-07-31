@@ -44,7 +44,8 @@ function Header() {
 
         .movieQuery {
           margin: 0 50px 0 0;
-          padding: 0;
+          padding: 10px;
+          width: 100%;
         }
 
         .searchForm {
