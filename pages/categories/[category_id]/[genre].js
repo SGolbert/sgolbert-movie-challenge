@@ -79,6 +79,7 @@ export default function MoviesByGenre({ movies, category }) {
     setCurrentPage(selected);
   }
 
+  // trick to restore state out of local storage for server rendered pages
   if (!hasMounted) {
     return null;
   }
@@ -93,7 +94,11 @@ export default function MoviesByGenre({ movies, category }) {
         <div className="movieContainer">
           {movies.map((movie, index) =>
             index >= currentPage * 8 && index < (currentPage + 1) * 8 ? (
-              <Link href={`/movies/[movie_id]`} as={`/movies/${movie.id}`}>
+              <Link
+                href={`/movies/[movie_id]`}
+                as={`/movies/${movie.id}`}
+                key={movie.id}
+              >
                 <a className="movieItem">
                   <img
                     height="513px"

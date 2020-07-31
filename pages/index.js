@@ -52,7 +52,7 @@ function Home({ categories }) {
     setCurrentPage(selected);
   }
 
-  // trick to restore state out of local storage for SSG pages
+  // trick to restore state out of local storage for server rendered pages
   if (!hasMounted) {
     return null;
   }
@@ -75,6 +75,7 @@ function Home({ categories }) {
               <Link
                 href={`/categories/[category_id]/[genre]`}
                 as={`/categories/${category.id}/${category.name}`}
+                key={category.id}
               >
                 <a className="categoryItem">{category.name}</a>
               </Link>

@@ -3,6 +3,7 @@ import { render, cleanup } from "@testing-library/react";
 import Home from "../pages/index";
 import CategoryListPage from "../pages/categories/[category_id]/[genre]";
 import MoviePage from "../pages/movies/[movie_id]";
+import SearchPage from "../pages/search/[query]";
 
 afterEach(cleanup);
 
@@ -16,13 +17,26 @@ it("renders homepage unchanged", () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
-it("renders category page unchanged", () => {
-  const movieList = [
-    { title: "Back to the future", id: "1" },
-    { title: "Star Wars", id: "2" },
-  ];
+const movieList = [
+  {
+    title: "Back to the future",
+    id: "1",
+    image: "/1234",
+  },
+  {
+    title: "Star Wars",
+    id: "2",
+    image: "/1234",
+  },
+];
 
+it("renders category page unchanged", () => {
   const { asFragment } = render(<CategoryListPage movies={movieList} />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+it("renders search page unchanged", () => {
+  const { asFragment } = render(<SearchPage movies={movieList} />);
   expect(asFragment()).toMatchSnapshot();
 });
 
