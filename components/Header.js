@@ -20,7 +20,7 @@ function Header() {
         <Link href="/about">
           <a>About</a>
         </Link>
-        <form onSubmit={onSubmitHandler}>
+        <form onSubmit={onSubmitHandler} className="searchForm">
           <input
             className="movieQuery"
             type="input"
@@ -33,6 +33,7 @@ function Header() {
           align-items: center;
           border-bottom: 1px solid black;
           display: flex;
+          flex-wrap: wrap;
           font-size: 20px;
           text-align: left;
         }
@@ -43,10 +44,19 @@ function Header() {
 
         .movieQuery {
           margin: 0 50px 0 0;
+          padding: 0;
         }
 
-        .searchButton {
+        .searchForm {
           margin: 0;
+          padding: 0;
+        }
+
+        @media screen and (max-width: 610px) {
+          .searchForm {
+            margin-top: 20px;
+            flex: 1 0 100%;
+          }
         }
       `}</style>
     </>

@@ -3,25 +3,25 @@
 exports[`renders category page unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-1356211436 header"
+    class="jsx-576793678 header"
   >
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-1356211436"
+      class="jsx-576793678 searchForm"
     >
       <input
-        class="jsx-1356211436 movieQuery"
+        class="jsx-576793678 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
@@ -132,25 +132,25 @@ exports[`renders category page unchanged 1`] = `
 exports[`renders homepage unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-1356211436 header"
+    class="jsx-576793678 header"
   >
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-1356211436"
+      class="jsx-576793678 searchForm"
     >
       <input
-        class="jsx-1356211436 movieQuery"
+        class="jsx-576793678 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
@@ -234,25 +234,25 @@ exports[`renders homepage unchanged 1`] = `
 exports[`renders movie page unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-1356211436 header"
+    class="jsx-576793678 header"
   >
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-1356211436"
+      class="jsx-576793678 searchForm"
     >
       <input
-        class="jsx-1356211436 movieQuery"
+        class="jsx-576793678 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
@@ -342,25 +342,25 @@ exports[`renders movie page unchanged 1`] = `
 exports[`renders search page unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-1356211436 header"
+    class="jsx-576793678 header"
   >
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-1356211436"
+      class="jsx-576793678"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-1356211436"
+      class="jsx-576793678 searchForm"
     >
       <input
-        class="jsx-1356211436 movieQuery"
+        class="jsx-576793678 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
