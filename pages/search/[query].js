@@ -52,7 +52,12 @@ export default function MoviesByGenre({ movies }) {
                     <img
                       height="513px"
                       width="342px"
-                      src={`https://image.tmdb.org/t/p/w342${movie.image}`}
+                      src={
+                        movie.image === null
+                          ? "https://dummyimage.com/342x513/000/fff.jpg&text=Poster+not+found"
+                          : `https://image.tmdb.org/t/p/w342${movie.image}`
+                      }
+                      alt="Poster not found"
                     />
                     <p className="movieTitle">{movie.title}</p>
                   </a>

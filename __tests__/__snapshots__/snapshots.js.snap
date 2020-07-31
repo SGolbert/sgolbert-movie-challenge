@@ -43,6 +43,7 @@ exports[`renders category page unchanged 1`] = `
         href="/movies/1"
       >
         <img
+          alt="Poster not found"
           class="jsx-3550297800"
           height="513px"
           src="https://image.tmdb.org/t/p/w342/1234"
@@ -59,6 +60,7 @@ exports[`renders category page unchanged 1`] = `
         href="/movies/2"
       >
         <img
+          alt="Poster not found"
           class="jsx-3550297800"
           height="513px"
           src="https://image.tmdb.org/t/p/w342/1234"
@@ -268,6 +270,7 @@ exports[`renders movie page unchanged 1`] = `
       class="jsx-3477680548 movieDataContainer"
     >
       <img
+        alt="Poster Not Found"
         class="jsx-3477680548"
         src="https://image.tmdb.org/t/p/w500/1234"
       />
@@ -379,6 +382,7 @@ exports[`renders search page unchanged 1`] = `
         href="/movies/1"
       >
         <img
+          alt="Poster not found"
           class="jsx-3550297800"
           height="513px"
           src="https://image.tmdb.org/t/p/w342/1234"
@@ -395,6 +399,7 @@ exports[`renders search page unchanged 1`] = `
         href="/movies/2"
       >
         <img
+          alt="Poster not found"
           class="jsx-3550297800"
           height="513px"
           src="https://image.tmdb.org/t/p/w342/1234"

@@ -26,7 +26,14 @@ export default function Movie({ movie }) {
       <main>
         <h1>{movie.title}</h1>
         <div className="movieDataContainer">
-          <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} />
+          <img
+            src={
+              movie.poster_path === null
+                ? "https://dummyimage.com/500x750/000/fff.jpg&text=Poster+not+found"
+                : `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+            }
+            alt="Poster Not Found"
+          />
           <p>
             <span className="detail">Language:</span> {movie.original_language}
           </p>
