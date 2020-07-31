@@ -1,5 +1,7 @@
 This website shows the most popular movies of [TMDB](https://www.themoviedb.org/) grouped by category. It has been bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+A live version of the site can be found [here](https://sgolbert-movie-challenge.vercel.app/).
+
 # Introduction
 
 TMDB is a movie database open to the public through a REST API. Developers around the world can sign up, get a API key for free and then query the database in different ways.
@@ -50,4 +52,6 @@ Another example with Redux can be found [here](https://github.com/SGolbert/expen
 
 The styling has been made with a combination of styled-jsx (the default css-in-js styling solution of Next.js) and a global css file [mvp.css](https://github.com/SGolbert/sgolbert-movie-challenge/blob/master/styles/mvp.css). MVP stands for "Minimum Viable Product" and the stylesheet has been created by [Andy Brewer](https://andybrewer.github.io/mvp/).
 
-The idea behind this approach is to have acceptable css defaults which make prototyping fast. The current state of the website can be considered a MVP, not a final product in any way.
+The idea behind this approach is to have acceptable css defaults which make prototyping fast. The current state of the website can be considered a MVP.
+
+While the css code is minimal, responsive design principles have been taken into account, so that the website is mobile and tablet friendly.
