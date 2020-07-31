@@ -11,6 +11,7 @@ This website uses the API to get the following kinds of data:
 - List of genres
 - List of movies by genre
 - Single movie details
+- List of movies by a text search query
 
 Each type of data is used by a different page, as explained in the following section.
 
