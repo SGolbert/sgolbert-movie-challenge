@@ -1,6 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import Home from "../pages/index";
+import AboutPage from "../pages/about";
 import CategoryListPage from "../pages/categories/[category_id]/[genre]";
 import MoviePage from "../pages/movies/[movie_id]";
 import SearchPage from "../pages/search/[query]";
@@ -51,5 +52,10 @@ it("renders movie page unchanged", () => {
     poster_path: "/1234",
   };
   const { asFragment } = render(<MoviePage movie={movieDetails} />);
+  expect(asFragment()).toMatchSnapshot();
+});
+
+it("renders about page unchanged", () => {
+  const { asFragment } = render(<AboutPage />);
   expect(asFragment()).toMatchSnapshot();
 });

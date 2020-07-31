@@ -1,27 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders category page unchanged 1`] = `
+exports[`renders about page unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-576793678 header"
+    class="jsx-3778449893 header"
   >
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-576793678 searchForm"
+      class="jsx-3778449893 searchForm"
     >
       <input
-        class="jsx-576793678 movieQuery"
+        class="jsx-3778449893 movieQuery"
+        placeholder="Search for a movie..."
+        type="input"
+      />
+    </form>
+  </header>
+  <main
+    class="jsx-3152903270"
+  >
+    <h1
+      class="jsx-3152903270 title"
+    >
+      A Next.js project by Sebastian Golbert
+    </h1>
+    <p
+      class="jsx-3152903270 message"
+    >
+      This website has been created using Next.js and the Movie Database API. The source code can be found 
+      <a
+        class="jsx-3152903270"
+        href="https://github.com/SGolbert/sgolbert-movie-challenge"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        here
+      </a>
+      .
+    </p>
+    <button
+      class="goback"
+    >
+      Go back
+    </button>
+  </main>
+  <footer
+    class="jsx-627519052 footer"
+  >
+    Copyright 2020 - Sebastian Golbert
+  </footer>
+</DocumentFragment>
+`;
+
+exports[`renders category page unchanged 1`] = `
+<DocumentFragment>
+  <header
+    class="jsx-3778449893 header"
+  >
+    <a
+      class="jsx-3778449893"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="jsx-3778449893"
+      href="/about"
+    >
+      About
+    </a>
+    <form
+      class="jsx-3778449893 searchForm"
+    >
+      <input
+        class="jsx-3778449893 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
@@ -132,25 +195,25 @@ exports[`renders category page unchanged 1`] = `
 exports[`renders homepage unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-576793678 header"
+    class="jsx-3778449893 header"
   >
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-576793678 searchForm"
+      class="jsx-3778449893 searchForm"
     >
       <input
-        class="jsx-576793678 movieQuery"
+        class="jsx-3778449893 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
@@ -234,25 +297,25 @@ exports[`renders homepage unchanged 1`] = `
 exports[`renders movie page unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-576793678 header"
+    class="jsx-3778449893 header"
   >
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-576793678 searchForm"
+      class="jsx-3778449893 searchForm"
     >
       <input
-        class="jsx-576793678 movieQuery"
+        class="jsx-3778449893 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
@@ -342,25 +405,25 @@ exports[`renders movie page unchanged 1`] = `
 exports[`renders search page unchanged 1`] = `
 <DocumentFragment>
   <header
-    class="jsx-576793678 header"
+    class="jsx-3778449893 header"
   >
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/"
     >
       Home
     </a>
     <a
-      class="jsx-576793678"
+      class="jsx-3778449893"
       href="/about"
     >
       About
     </a>
     <form
-      class="jsx-576793678 searchForm"
+      class="jsx-3778449893 searchForm"
     >
       <input
-        class="jsx-576793678 movieQuery"
+        class="jsx-3778449893 movieQuery"
         placeholder="Search for a movie..."
         type="input"
       />
