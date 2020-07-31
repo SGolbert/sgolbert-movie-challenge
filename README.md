@@ -35,7 +35,7 @@ When a particular movie is clicked, the user will be taken to the movie's detail
 
 This pages shows a series of characteristics about the movie, including the language, release date and release poster. This page is _server rendered_, to show Next.js SSR capabilities and also avoid taxing the API just for demo purposes. However, if the underlying data is stable it would be beneficial both to the users and the host to statically generate the detail pages, as that will guarantee only one API call per movie as opposed to thousands of calls for the most popular movies.
 
-## [Search page](https://github.com/SGolbert/sgolbert-movie-challenge/blob/master/pages/search/%query%5D.js)
+## [Search page](https://github.com/SGolbert/sgolbert-movie-challenge/blob/master/pages/search/%5Bquery%5D.js)
 
 This page searches for movies matching the query in the URL using server-side rendering. When the user uses the search field in the header, she will be redirected here.
 It only displays the first page of results in the spirit of being API friendly.
