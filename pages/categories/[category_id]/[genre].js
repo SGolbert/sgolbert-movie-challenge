@@ -76,6 +76,9 @@ export default function MoviesByGenre({ movies, category }) {
   function handlePageClick(data) {
     let selected = data.selected;
     localStorage.setItem(`movie_challenge_${category}_curr_page`, selected);
+    if (selected > currentPage) {
+      window.scrollTo(0, 0);
+    }
     setCurrentPage(selected);
   }
 

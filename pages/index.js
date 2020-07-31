@@ -49,6 +49,9 @@ function Home({ categories }) {
     let selected = data.selected;
 
     localStorage.setItem("movie_challenge_landing_curr_page", selected);
+    if (selected > currentPage) {
+      window.scrollTo(0, 0);
+    }
     setCurrentPage(selected);
   }
 
