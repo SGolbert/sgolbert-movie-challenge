@@ -1,155 +1,201 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders category page unchanged 1`] = `
-<div>
-  <main>
-    <h1>
-      Category 
+<DocumentFragment>
+  <header
+    class="jsx-2974403945 header"
+  >
+    <a
+      class="jsx-2974403945"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="jsx-2974403945"
+      href="/about"
+    >
+      About
+    </a>
+  </header>
+  <main
+    class="jsx-3550297800"
+  >
+    <h1
+      class="jsx-3550297800"
+    >
+       movies
     </h1>
-    <ul>
-      <li>
-        <a
-          href="/movies/1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+    <div
+      class="jsx-3550297800 movieContainer"
+    >
+      <a
+        class="jsx-3550297800 movieItem"
+        href="/movies/1"
+      >
+        <img
+          class="jsx-3550297800"
+          height="513px"
+          src="https://image.tmdb.org/t/p/w342undefined"
+          width="342px"
+        />
+        <p
+          class="jsx-3550297800 movieTitle"
         >
           Back to the future
-        </a>
-      </li>
-      <li>
-        <a
-          href="/movies/2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        </p>
+      </a>
+      <a
+        class="jsx-3550297800 movieItem"
+        href="/movies/2"
+      >
+        <img
+          class="jsx-3550297800"
+          height="513px"
+          src="https://image.tmdb.org/t/p/w342undefined"
+          width="342px"
+        />
+        <p
+          class="jsx-3550297800 movieTitle"
         >
           Star Wars
-        </a>
-      </li>
-    </ul>
+        </p>
+      </a>
+    </div>
     <div
-      className="pagination"
+      class="jsx-3550297800 pagination"
     >
       <ul
-        className="pagination"
+        class="pagination"
       >
         <li
-          className="previous disabled"
+          class="previous disabled"
         >
           <a
             aria-disabled="true"
-            onClick={[Function]}
-            onKeyPress={[Function]}
             role="button"
-            tabIndex="0"
+            tabindex="0"
           >
             previous
           </a>
         </li>
         <li
-          className="active"
+          class="active"
         >
           <a
             aria-current="page"
             aria-label="Page 1 is your current page"
-            onClick={[Function]}
-            onKeyPress={[Function]}
             role="button"
-            tabIndex="0"
+            tabindex="0"
           >
             1
           </a>
         </li>
         <li
-          className="next disabled"
+          class="next disabled"
         >
           <a
             aria-disabled="true"
-            onClick={[Function]}
-            onKeyPress={[Function]}
             role="button"
-            tabIndex="0"
+            tabindex="0"
           >
             next
           </a>
         </li>
       </ul>
     </div>
+    <button
+      class="goback"
+    >
+      Go back
+    </button>
   </main>
-</div>
+  <footer
+    class="jsx-627519052 footer"
+  >
+    Copyright 2020 - Sebastian Golbert
+  </footer>
+</DocumentFragment>
 `;
 
 exports[`renders homepage unchanged 1`] = `
-<div
-  className="container"
->
-  <main>
-    <h1
-      className="title"
+<DocumentFragment>
+  <header
+    class="jsx-2974403945 header"
+  >
+    <a
+      class="jsx-2974403945"
+      href="/"
     >
-      Best rated movies at The Movie Database
+      Home
+    </a>
+    <a
+      class="jsx-2974403945"
+      href="/about"
+    >
+      About
+    </a>
+  </header>
+  <main
+    class="jsx-1091064000"
+  >
+    <h1
+      class="jsx-1091064000 title"
+    >
+      These are the most popular movies at The Movie Database
     </h1>
-    <ul>
-      <li>
-        <a
-          href="/categories/1"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Action
-        </a>
-      </li>
-      <li>
-        <a
-          href="/categories/2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Crime
-        </a>
-      </li>
-    </ul>
     <div
-      className="pagination"
+      class="jsx-1091064000 categoryContainer"
+    >
+      <a
+        class="jsx-1091064000 categoryItem"
+        href="/categories/1/Action"
+      >
+        Action
+      </a>
+      <a
+        class="jsx-1091064000 categoryItem"
+        href="/categories/2/Crime"
+      >
+        Crime
+      </a>
+    </div>
+    <div
+      class="jsx-1091064000 paginate"
     >
       <ul
-        className="pagination"
+        class="pagination"
       >
         <li
-          className="previous disabled"
+          class="previous disabled"
         >
           <a
             aria-disabled="true"
-            onClick={[Function]}
-            onKeyPress={[Function]}
             role="button"
-            tabIndex="0"
+            tabindex="0"
           >
             previous
           </a>
         </li>
         <li
-          className="active"
+          class="active"
         >
           <a
             aria-current="page"
             aria-label="Page 1 is your current page"
-            onClick={[Function]}
-            onKeyPress={[Function]}
             role="button"
-            tabIndex="0"
+            tabindex="0"
           >
             1
           </a>
         </li>
         <li
-          className="next disabled"
+          class="next disabled"
         >
           <a
             aria-disabled="true"
-            onClick={[Function]}
-            onKeyPress={[Function]}
             role="button"
-            tabIndex="0"
+            tabindex="0"
           >
             next
           </a>
@@ -157,38 +203,108 @@ exports[`renders homepage unchanged 1`] = `
       </ul>
     </div>
   </main>
-</div>
+  <footer
+    class="jsx-627519052 footer"
+  >
+    Copyright 2020 - Sebastian Golbert
+  </footer>
+</DocumentFragment>
 `;
 
 exports[`renders movie page unchanged 1`] = `
-<div>
-  <main>
-    <h1>
+<DocumentFragment>
+  <header
+    class="jsx-2974403945 header"
+  >
+    <a
+      class="jsx-2974403945"
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class="jsx-2974403945"
+      href="/about"
+    >
+      About
+    </a>
+  </header>
+  <main
+    class="jsx-3477680548"
+  >
+    <h1
+      class="jsx-3477680548"
+    >
       Back to the future
     </h1>
-    <img
-      src="https://image.tmdb.org/t/p/w500/1234"
-    />
-    <p>
-      Language: 
-      en
-    </p>
-    <p>
-      Release date: 
-      1980-01-01
-    </p>
-    <p>
-      Overview: 
-      Great movie!
-    </p>
-    <p>
-      Number of votes: 
-      10000
-    </p>
-    <p>
-      Average rating: 
-      10
-    </p>
+    <div
+      class="jsx-3477680548 movieDataContainer"
+    >
+      <img
+        class="jsx-3477680548"
+        src="https://image.tmdb.org/t/p/w500/1234"
+      />
+      <p
+        class="jsx-3477680548"
+      >
+        <span
+          class="jsx-3477680548 detail"
+        >
+          Language:
+        </span>
+         en
+      </p>
+      <p
+        class="jsx-3477680548"
+      >
+        <span
+          class="jsx-3477680548 detail"
+        >
+          Release date:
+        </span>
+         1980-01-01
+      </p>
+      <p
+        class="jsx-3477680548"
+      >
+        <span
+          class="jsx-3477680548 detail"
+        >
+          Overview:
+        </span>
+         Great movie!
+      </p>
+      <p
+        class="jsx-3477680548"
+      >
+        <span
+          class="jsx-3477680548 detail"
+        >
+          Number of votes:
+        </span>
+         10000
+      </p>
+      <p
+        class="jsx-3477680548"
+      >
+        <span
+          class="jsx-3477680548 detail"
+        >
+          Average rating:
+        </span>
+         10
+      </p>
+    </div>
+    <button
+      class="goback"
+    >
+      Go back
+    </button>
   </main>
-</div>
+  <footer
+    class="jsx-627519052 footer"
+  >
+    Copyright 2020 - Sebastian Golbert
+  </footer>
+</DocumentFragment>
 `;

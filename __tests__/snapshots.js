@@ -1,8 +1,10 @@
 import React from "react";
-import renderer from "react-test-renderer";
+import { render, cleanup } from "@testing-library/react";
 import Home from "../pages/index";
 import CategoryListPage from "../pages/categories/[category_id]/[genre]";
 import MoviePage from "../pages/movies/[movie_id]";
+
+afterEach(cleanup);
 
 it("renders homepage unchanged", () => {
   const categories = [
@@ -10,8 +12,8 @@ it("renders homepage unchanged", () => {
     { name: "Crime", id: "2" },
   ];
 
-  const tree = renderer.create(<Home categories={categories} />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(<Home categories={categories} />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it("renders category page unchanged", () => {
@@ -20,10 +22,8 @@ it("renders category page unchanged", () => {
     { title: "Star Wars", id: "2" },
   ];
 
-  const tree = renderer
-    .create(<CategoryListPage movies={movieList} />)
-    .toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(<CategoryListPage movies={movieList} />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 it("renders movie page unchanged", () => {
@@ -36,6 +36,6 @@ it("renders movie page unchanged", () => {
     vote_average: 10,
     poster_path: "/1234",
   };
-  const tree = renderer.create(<MoviePage movie={movieDetails} />).toJSON();
-  expect(tree).toMatchSnapshot();
+  const { asFragment } = render(<MoviePage movie={movieDetails} />);
+  expect(asFragment()).toMatchSnapshot();
 });
